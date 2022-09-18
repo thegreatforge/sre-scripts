@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "capacity-benchmarking"
+version = "0.1.0"
+description = ""
+authors = ["parthw <wparth777@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+boto3 = "^1.24.60"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
