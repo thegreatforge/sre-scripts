@@ -1,0 +1,16 @@
+
+datadir: "./data"
+
+slack:
+  token: ""
+  channel_id: ""
+
+aws:
+  profile: "prod"
+  region: ""
+
+rds:
+  enableFilter: true
+  filter:
+    identifier: 
+    - "" 

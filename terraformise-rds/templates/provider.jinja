@@ -1,0 +1,42 @@
+{%- if providers.get("aws") %}
+provider "aws" {
+  region = {{ providers.get("aws").get("region") }}
+}
+{%- endif %}
+
+
+{%- if providers.get("cloudflare") %}
+provider "cloudflare" {}
+{%- endif %}
+
+
+terraform {
+  required_version = {{ terraform.get("required_version") }}
+  required_providers {
+  {%- if providers.get("aws") %}
+    aws = {
+      source  = {{ providers.get("aws").get("source") }}
+      version = {{ providers.get("aws").get("version") }}
+    }
+  {%- endif %}
+
+  {%- if providers.get("cloudflare") %}
+    cloudflare = {
+      source  = {{ providers.get("cloudflare").get("source") }}
+      version = {{ providers.get("cloudflare").get("version") }}
+    }
+  {%- endif %}
+  }
+
+  {%- if terraform.get("backend") %}
+    {%- if terraform.get("backend").get("s3") %}
+  backend "s3" {
+    bucket = {{ terraform.get("backend").get("s3").get("bucket") }}
+    key    = {{ terraform.get("backend").get("s3").get("key") }}
+    region = {{ terraform.get("backend").get("s3").get("region") }}
+  }
+    {%- endif %}
+
+  {%- endif %}
+}
+
