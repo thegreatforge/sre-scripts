@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "terraformise-existing-resources"
+name = "terraformise-rds"
 version = "0.1.0"
 description = ""
 authors = ["parthw <wparth777@gmail.com>"]
