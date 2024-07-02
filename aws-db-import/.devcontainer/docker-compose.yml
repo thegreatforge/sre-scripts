@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  
+  aws-db-import:
+    build:
+      context: ../.
+      dockerfile: ./.devcontainer/devcontainer.Dockerfile
+    environment:
+      - AWS_ACCESS_KEY_ID=X
+      - AWS_SECRET_ACCESS_KEY=X
+      - AWS_DEFAULT_REGION=us-east-1
+    volumes:
+      - ../.:/aws-db-import
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+
+  localstack:
+    image: localstack/localstack:2.3.2
+    environment:
+      - SERVICES=dynamodb,s3
+      - EDGE_PORT=4566
+      - LS_LOG=debug
+    volumes:
+      - "./localstack/init.sh:/etc/localstack/init/ready.d/init-aws.sh"

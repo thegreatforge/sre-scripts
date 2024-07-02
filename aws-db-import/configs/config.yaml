@@ -1,0 +1,6 @@
+log:
+  mode: dev # dev, production
+
+server:
+  port: 8090
+  host: localhost

@@ -1,0 +1,23 @@
+{
+	"name": "Existing Docker Compose (Extend)",
+	"dockerComposeFile": [
+		"docker-compose.yml"
+	],
+	"service": "aws-db-import",
+	"workspaceFolder": "/aws-db-import",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"golang.go",
+				"trixnz.go-to-method",
+				"esbenp.prettier-vscode",
+				"zxh404.vscode-proto3",
+				"Gruntfuggly.todo-tree",
+				"redhat.vscode-yaml",
+				"eamodio.gitlens",
+				"parthw-vscode.vscode-weaver"
+			]
+		}
+	},
+	"remoteUser": "root"
+}
